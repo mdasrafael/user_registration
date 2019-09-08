@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Simple user registration/authentication system using Postgres db. 
+This authentication solution was created avoinding the usage of third party libraries as Devise authentication.
+As an user you will be able to:
+- create an account
+- edit user profile (username and password)
+- reset the password in case it was forgotten
