@@ -7,6 +7,8 @@ As an user you will be able to:
 - edit user profile (username and password)
 - reset the password in case it was forgotten
 
+In development environment the emails sent by the application will be opened in a different tab for preview. For that I'm using {letter-opener}[https://github.com/ryanb/letter_opener] gem.
+
 ## Getting started
 
 Clone user registration code base:
