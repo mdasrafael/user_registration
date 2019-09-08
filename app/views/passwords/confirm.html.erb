@@ -1,0 +1,9 @@
+<% @page_title = 'Password Recovery' -%>
+<div class='Password_Recovery_Form'>
+  <h1>Password Recovery</h1>
+  <%= form_for(:user, :url => {controller: 'passwords', action: 'confirm_token'}) do |f| %>
+    <p>Enter the token you received by email in order to reset your password</br></p>
+    <p>Token:</br> <%= f.reset_password_token :reset_password_token %></p>
+    <%= f.submit :Confirm %>
+  <% end %>
+</div>

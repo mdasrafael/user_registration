@@ -1,0 +1,11 @@
+<% @page_title = 'Password Recovery' -%>
+<div class= 'Password_Recovery_Form'>
+  <h1>Password Recovery</h1>
+  <%= form_for(:user, as: :user, url: {controller: 'users', action: 'update_password'}, html: { method: :put }) do |f| %>
+    <p>Enter the token you received by email in order to reset your password</br></p>
+    <%= f.hidden_field :reset_password_token, readonly: true %>
+    <p>Password:</br> <%= f.password_field :password %></p>
+    <p>Password Confirmation:</br> <%= f.password_field :password_confirmation %> </p>
+    <%= f.submit :Reset %>
+  <% end %>
+</div>

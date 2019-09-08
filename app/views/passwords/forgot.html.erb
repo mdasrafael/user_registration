@@ -1,0 +1,9 @@
+<% @page_title = 'Password Recovery' -%>
+<div class='Password_Recovery_Form'>
+  <h1>Password Recovery</h1>
+  <%= form_for(:user, :url => {controller: 'passwords', action: 'create_token'}) do |f| %>
+    <p>Enter the email you use for incubit, and we’ll help you create a new password</br></p>
+    <p>Email:</br> <%= f.email_field :email %></p>
+    <%= f.submit :Send %>
+  <% end %>
+</div>
