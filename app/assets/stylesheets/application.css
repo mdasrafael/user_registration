@@ -13,3 +13,99 @@
  *= require_tree .
  *= require_self
  */
+body{
+  background-color: #FCFAFA;
+}
+.Sign_Form, .Edit_Form, .Password_Recovery_Form{
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+  width: 85%;
+  color: #FCFAFA;
+  background-color: #4E9EC6;
+  padding-bottom: 20px;
+  padding-top: 2px;
+  border-radius: 18px;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+.Edit_Form input{
+  width: 50%;
+}
+
+.Signup_Errors, .Edit_Errors{
+  list-style-type: none;
+  text-align: left;
+  margin-left: 66px;
+  color: red;
+}
+
+.Main_Header{
+  background-image: url('header_bg.png');
+  height: 60px;
+  padding: 0 20px;
+  border-radius: 18px;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+.Main_Header h1{
+  float: left;
+  margin-top: 8px;
+  color: #4E9EC6;
+  background-image: url('ruby-source-logo.png');
+  height: 43px;
+  width: 215px;
+  text-indent: -9999px;
+}
+
+.nav{
+  list-style-type: none;
+  text-align: right;
+  color: #4E9EC6;
+}
+
+.nav li{
+  display: inline;
+  margin-right: 5px;
+}
+
+.nav_links{
+  color: #4E9EC6;
+  text-decoration: none;
+}
+
+.notice, .valid_notice, .invalid_notice{
+  height: auto;
+  width: 50%;
+  margin: auto;
+  margin-top: 16px;
+}
+
+.notice, .invalid_notice p, .valid_notice p{
+  text-align: center;
+  margin-top: 18px;
+}
+
+.notice{
+  background-color: transparent;
+}
+
+.invalid_notice{
+  background-color: #FFCCCC;
+  border: 1px solid red;
+}
+
+.valid_notice{
+  background-color: #CCFFCC;
+  border: 1px solid green;
+}
+
+.User_Header{
+  color: #FCFAFA;
+  background-color: #4E9EC6;
+  border-radius: 18px;
+  margin: auto;
+  width: 220px;
+  padding-top: 6px;
+  text-align: center;
+}
