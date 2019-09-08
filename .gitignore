@@ -18,5 +18,7 @@
 
 .byebug_history
 
-# Ignore environment variables file
-/config/environment_variables.rb
+# Ignore environment variables files
+/config/development.yml
+/config/production.yml
+/config/test.yml
