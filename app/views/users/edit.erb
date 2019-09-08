@@ -1,0 +1,29 @@
+<% @page_title = 'Edit Profile' -%>
+<div class= 'Edit_Form'>
+  <h1>Profile</h1>
+  <%= form_for(:user, as: :user, url: {controller: 'users', action: 'update'}, html: { method: :put }) do |f| %>
+    <p> Username:</br> <%= f.text_field :username, autofocus: true%> </p>
+    <p> Email:</br> <%= f.email_field :email, disabled: true%> </br>
+      <i>(you can't change your email on your own, please contact the support)</i></p>
+    <p> Password:</br> <%= f.password_field :password, autocomplete: "off"%> </br>
+      <i>(leave blank if you don't want to change it)</i>
+    <p> Password Confirmation:</br>
+      <%= f.password_field :password_confirmation, autocomplete: "off"%> </p>
+    <p> Current Password:</br> <%= f.password_field :current_password%> </br>
+      <i>(we need your current password to confirm your changes)</i></p>
+    <%= f.submit :Update %>
+  <% end %>
+  <% if @user.errors.any? %>
+    <ul class='Edit_Errors'>
+		<% flash['notice'].each do |value| %>
+      <li>* <%= value %></li>
+		<% end %>
+    </ul>
+  <% end %>
+</div>
+
+<div class= 'Edit_Form'>
+  <h3>Unhappy?</h3>
+
+  <p><%= button_to "Cancel my account", user_path(:user), data: { confirm: "Are you sure?" }, method: :delete %></p>
+</div>

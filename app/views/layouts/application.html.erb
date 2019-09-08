@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>UserRegistration</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>incubit User Registration</title>
+  <%= stylesheet_link_tag    'application', :media => 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class='Main_Header'>
+    <h1>Ruby Source</h1>
+    <%unless session[:user_id]%>
+      <ul class='nav'>
+        <li><%= link_to :Signup , :signup, class: 'nav_links'%></li>|
+        <li><%= link_to :Login , :login, class: 'nav_links'%></li>
+      </ul>
+    <%else%>
+      <ul class='nav'>
+        <li><%= link_to :Profile , :profile, class: 'nav_links' %> |</li>
+        <li><%= link_to :Logout , :logout, class: 'nav_links' %></li>
+      </ul>
+    <%end%>
+  </div>
+  <% if flash[:color]== 'valid' %>
+    <div class='valid_notice'>
+      <p><%= flash[:notice]%></p>
+    </div>
+  <% elsif flash[:color]== 'invalid'%>
+    <div class='invalid_notice'>
+      <p><%=flash[:notice]%></p>
+    </div>
+  <%else%>
+    <div class='notice'>
+      <p><%=flash[:notice]%></p>
+    </div>
+  <%end%>
+<%= yield %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+</body>
 </html>
