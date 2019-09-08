@@ -54,12 +54,11 @@ class UsersController < ApplicationController
 
     if @user.reset_password!(password_reset_params)
       flash[:color] = 'valid'
-      msg = 'Your password was successfully changed'
+      redirect_to login_url, notice: 'Your password was successfully changed'
     else
       flash[:color] = 'invalid'
-      msg = @user.errors.full_messages.join(', ')
+      redirect_back(fallback_location: reset_password_url, notice: @user.errors.full_messages.join(', '))
     end
-    redirect_to login_url, notice: msg
   end
 
   def destroy
