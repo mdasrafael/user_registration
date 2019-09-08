@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: 'notifications@incubit.co.jp'
+  default from: ENV['EMAIL']
 
   def welcome_email
     @user = params[:user]
