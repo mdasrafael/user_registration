@@ -13,6 +13,7 @@ module UserRegistration
 
     # Load environment variables
     config.before_configuration do
+    	ENV['RAILS_ENV'] = 'development' if !ENV['RAILS_ENV'].present?
 		  env_file = File.join(Rails.root, 'config', ENV['RAILS_ENV']+'.yml')
 		  YAML.load(File.open(env_file)).each do |key, value|
 		    ENV[key.to_s] = value
